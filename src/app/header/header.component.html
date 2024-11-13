@@ -1,0 +1,24 @@
+<!-- Barra de navegación con un fondo personalizado usando la clase 'colorBarra' -->
+<nav class="navbar navbar-expand-lg navbar-light colorBarra">
+    <div class="container-fluid">
+      <!-- Marca de la barra de navegación con el título dinámico -->
+      <a class="navbar-brand colorTexto" href="#">{{titulo}}</a>
+        <!-- Botón de menú de navegación en dispositivos pequeños (colapsable) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Contenedor que se expande o colapsa según el tamaño de la pantalla -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- Enlace de navegación a la sección de Estudiantes, con clase 'active' cuando está seleccionado -->
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['/estudiantes']">Estudiantes</a>
+          </li>
+          <!-- Enlace de navegación a la sección de Pregrados -->
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/responsables']">Pregrados</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,20 @@
+/* Estilo para el fondo de la barra de navegación */
+.colorBarra{
+    background-color: #1565C0;
+}
+
+/* Estilo para el color del texto */
+.colorTexto{
+    color: #ffffff;
+}
+
+/* Estilo para los enlaces de navegación en la barra */
+.navbar .nav-link {
+    color: #ffffff !important;
+    transition: color 0.3s ease; /* Suaviza la transición de color */
+}
+
+/* Estilo para los enlaces de navegación cuando se pasa el mouse sobre ellos */
+.navbar .nav-link:hover {
+    color:#2196F3 !important; /* Color naranja oscuro al hacer hover */
+}

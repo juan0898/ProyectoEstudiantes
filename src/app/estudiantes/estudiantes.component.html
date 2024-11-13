@@ -1,0 +1,38 @@
+<!--Tajeta para mostrar la información de los estudiantes-->
+<div class="card bg-light mb-3 my-5">
+
+  <!--Encabezado de la tarjeta-->
+  <div class="card-header text-center fw-bold fs-4 text-white" style="background-color: #1976D2">
+    Estudiantes Universitarios
+  </div>
+
+  <!--Cuerpo de la tarjeta-->
+  <div class="card-body" >
+    <h5 class="card-title" >Listado de Estudiantes</h5>
+
+    <!--Lista los estudiantes-->
+    <ul class="list-group">
+      <!--Itera sobre el repositorio de estudiantes y muestra a cada uno-->
+      <li class="list-group-item" *ngFor="let indice of repositorio">
+        <!--Muestra cada uno de los datos registrados del estudiante-->
+        <h5>Estudiante {{indice.id}}</h5>
+        <p><strong>Nombre:</strong> {{indice.nombre}}</p>
+        <p><strong>Edad:</strong> {{indice.edad}}</p>
+        <p><strong>Carrera:</strong> {{indice.carrera}}</p>
+        <p><strong>Universidad:</strong> {{indice.universidad}}</p>
+        <p><strong>Promedio:</strong> {{indice.promedio}}</p>
+        <!--Botones de acción para editar y eliminar-->
+        <div class="d-flex justify-content-between">
+          <!--Botón para editar estudiante, redirige al formulario con el ID del estudiante-->
+          <button type="button" name="editar" [routerLink]="['/estudiantes/form', indice.id]" class="btn btn-primary">Editar</button>
+          <!--Botón para eliminar a un estudiante, llamando el metodo delete-->
+          <button type="button" name="eliminar" (click)="delete(indice)" class="btn btn-danger">Eliminar</button>
+        </div>
+      </li>
+      <!--Boton para crear un nuevo estudiante-->
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/estudiantes/form']">Crear Estudiante</button>
+      </div>
+    </ul>
+  </div>
+</div>

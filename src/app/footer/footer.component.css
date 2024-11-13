@@ -1,0 +1,18 @@
+/* Estilo para el fondo del pie de página */
+.colorFooter {
+    background-color: #1565C0; /* Color de fondo azul para el pie de página */
+}
+
+/* Estilo para el pie de página */
+.footer {
+    font-size: 12px; /* Tamaño de fuente pequeño */
+    line-height: 0.5;/* Espaciado entre líneas reducido */
+    position: fixed; /* Fijar en la parte inferior */
+    bottom: 0; /* Pegar al fondo */
+    left: 0; /* Alinea a la izquierda */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 30px; /* Altura */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+}
+
+

@@ -1,0 +1,57 @@
+<!-- Tarjeta para el formulario de creación/edición de estudiante -->
+<div class="card bg-dark text-white mx-auto" style="max-width: 600px; margin-top: 50px;"> 
+    <!-- Encabezado de la tarjeta con el título dinámico -->
+    <div class="card-header text-center fs-3 fw-bold" style="background-color: #1565C0">
+        {{titulo}}
+    </div>
+    <!-- Cuerpo de la tarjeta con fondo color azul -->
+    <div class="card-body" style="background-color: #1976D2">
+        <!-- Formulario con clases de Bootstrap para maquetación -->
+        <form class="row g-3">
+            <!-- Campo para el nombre completo del estudiante -->
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre Completo:</label>
+                <input type="text" class="form-control" [(ngModel)]="estudiante.nombre" name="nombre" required>
+            </div>
+            <!-- Campo para la edad del estudiante -->
+            <div class="col-md-6">
+                <label for="edad" class="form-label">Edad:</label>
+                <input type="number" class="form-control" [(ngModel)]="estudiante.edad" name="edad" required>
+            </div>
+            <!-- Campo para seleccionar la carrera -->
+            <div class="col-md-6">
+                <label for="carrera" class="form-label">Carrera:</label>
+                <select class="form-select" [(ngModel)]="estudiante.carrera" name="carrera" required>
+                    <option selected disabled value="">Selecciona una carrera...</option>
+                    <option>Ingeniería Ambiental</option>
+                    <option>Ingeniería de Energías Renovables</option>
+                    <option>Ingeniería de Sistemas</option>
+                    <option>Ingeniería Industrial</option>
+                    <option>Ingeniería Mecatrónica</option>
+                </select>
+            </div>
+            <!-- Campo para el nombre de la universidad -->
+            <div class="col-md-6">
+                <label for="universidad" class="form-label">Universidad:</label>
+                <input type="text" class="form-control" [(ngModel)]="estudiante.universidad" name="universidad" required>
+            </div>
+            <!-- Campo para el promedio del estudiante -->
+            <div class="col-md-6">
+                <label for="promedio" class="form-label">Promedio:</label>
+                <input type="number" class="form-control" [(ngModel)]="estudiante.promedio" name="promedio" required>
+            </div>
+            <!-- Botones para crear o editar dependiendo de si el estudiante tiene un ID -->
+            <div class="col-12">
+                <!-- Botón de creación si el estudiante no tiene ID -->
+                <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!estudiante.id else elseBlock">
+                    Crear
+                </button>
+                <!-- Bloque alternativo con botón de edición si el estudiante tiene ID -->
+                <ng-template #elseBlock>
+                    <button class="btn btn-primary" role="button" (click)='update()'>Editar</button>
+                </ng-template>
+            </div>
+        </form>
+    </div>
+  </div>
+  
